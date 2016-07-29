@@ -174,7 +174,7 @@ sudo R --no-save << EOF
 install.packages(c('RJSONIO', 'itertools', 'digest', 'Rcpp', 'functional', 'httr', 'plyr', 'stringr', 'reshape2', 'caTools', 'rJava'),
 repos="http://cran.rstudio.com", INSTALL_opts=c('--byte-compile') )
 # here you can add your required packages which should be installed on ALL nodes
-# install.packages(c(''), repos="http://cran.rstudio.com", INSTALL_opts=c('--byte-compile') )
+install.packages(c('tm'), repos="http://cran.rstudio.com", INSTALL_opts=c('--byte-compile'), dependencies = TRUE )
 EOF
 
 
