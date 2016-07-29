@@ -99,9 +99,10 @@ sudo sh -c "echo '$USERPW' | passwd $USER --stdin"
 if [ "$IS_MASTER" = true -a "$RSTUDIO" = true ]; then
   # install Rstudio server
   # please check and update for latest RStudio version
-  wget https://download2.rstudio.org/rstudio-server-0.99.903-amd64.deb
-  sudo yum install --nogpgcheck -y rstudio-server-0.99.903-amd64.deb
   
+  wget https://download2.rstudio.org/rstudio-server-rhel-0.99.465-x86_64.rpm
+  sudo yum install -y --nogpgcheck rstudio-server-rhel-0.99.465-x86_64.rpm
+
   # change port - 8787 will not work for many companies
   sudo sh -c "echo 'www-port=$RSTUDIOPORT' >> /etc/rstudio/rserver.conf"
   sudo rstudio-server restart
